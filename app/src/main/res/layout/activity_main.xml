@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.db.williamchart.view.LineChartView
+            android:id="@+id/lineChart"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:chart_axis="y"
+            app:chart_lineColor="#64B5F6"
+            app:chart_lineThickness="3dp"
+            app:chart_smoothLine="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/hoodButton"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/hood"
+            app:layout_constraintBaseline_toBaselineOf="@+id/outletButton"
+            app:layout_constraintEnd_toEndOf="@+id/bedroomButton"
+            app:layout_constraintStart_toStartOf="@+id/bedroomButton" />
+
+        <Button
+            android:id="@+id/outletButton"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hoodButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/outlet"
+            app:layout_constraintEnd_toEndOf="@+id/livingroomButton"
+            app:layout_constraintStart_toStartOf="@+id/livingroomButton"
+            app:layout_constraintTop_toBottomOf="@+id/livingroomButton" />
+
+        <Button
+            android:id="@+id/bedroomButton"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/outletButton"
+            android:layout_centerHorizontal="true"
+            android:text="@string/bedroom"
+            app:layout_constraintBaseline_toBaselineOf="@+id/livingroomButton"
+            app:layout_constraintEnd_toEndOf="@+id/tvAm"
+            app:layout_constraintStart_toStartOf="@+id/tvAm" />
+
+        <Button
+            android:id="@+id/livingroomButton"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bedroomButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/living_room"
+            app:layout_constraintEnd_toEndOf="@+id/tvNap"
+            app:layout_constraintStart_toStartOf="@+id/tvNap"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovBtn" />
+
+        <Button
+            android:id="@+id/doorButton"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/door"
+            app:layout_constraintBaseline_toBaselineOf="@+id/hoodButton"
+            app:layout_constraintEnd_toEndOf="@+id/kitchenButton"
+            app:layout_constraintStart_toStartOf="@+id/kitchenButton" />
+
+        <Button
+            android:id="@+id/kitchenButton"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/kitchen"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bedroomButton"
+            app:layout_constraintEnd_toEndOf="@+id/tvTerm"
+            app:layout_constraintStart_toStartOf="@+id/tvTerm" />
+
+        <View
+            android:id="@+id/colorPreview"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/blueSeekBar"
+            app:layout_constraintStart_toStartOf="@+id/tvBlue"
+            app:layout_constraintTop_toBottomOf="@+id/tvBlue" />
+
+        <SeekBar
+            android:id="@+id/redSeekBar"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:max="255"
+            android:progress="0"
+            android:progressBackgroundTint="@color/red"
+            android:thumbTint="@color/red"
+            android:progressTint="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovRGB" />
+
+        <SeekBar
+            android:id="@+id/greenSeekBar"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:max="255"
+            android:progress="0"
+            android:progressBackgroundTint="@color/green"
+            android:thumbTint="@color/green"
+            android:progressTint="@color/green"
+            app:layout_constraintEnd_toEndOf="@+id/redSeekBar"
+            app:layout_constraintStart_toStartOf="@+id/redSeekBar"
+            app:layout_constraintTop_toBottomOf="@+id/redSeekBar" />
+
+        <SeekBar
+            android:id="@+id/blueSeekBar"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/greenSeekBar"
+            android:layout_alignStart="@id/greenSeekBar"
+            android:layout_alignEnd="@id/greenSeekBar"
+            android:layout_marginTop="25dp"
+            android:max="255"
+            android:progress="0"
+            android:progressBackgroundTint="@color/blue"
+            android:thumbTint="@color/blue"
+            android:progressTint="@color/blue"
+            app:layout_constraintEnd_toEndOf="@+id/greenSeekBar"
+            app:layout_constraintStart_toStartOf="@+id/greenSeekBar"
+            app:layout_constraintTop_toBottomOf="@+id/greenSeekBar" />
+
+        <SeekBar
+            android:id="@+id/temperatureSeekBar"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="25dp"
+            android:max="500"
+            android:progressBackgroundTint="@color/orange"
+            android:thumbTint="@color/orange"
+            android:progressTint="@color/orange"
+            app:layout_constraintEnd_toEndOf="@+id/colorPreview"
+            app:layout_constraintStart_toStartOf="@+id/colorPreview"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovTemp" />
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/temperatureSeekBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="1rpm"
+            android:textColor="@color/orange"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/temperatureSeekBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovTemp" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="170dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovGlas" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopBtn"
+            android:text="@string/stop"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnStart" />
+
+        <TextView
+            android:id="@+id/tvAm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
+            android:text="Amper"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvNap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvNap" />
+
+        <TextView
+            android:id="@+id/tvTerm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Temp"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvAm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvAm" />
+
+        <TextView
+            android:id="@+id/tvNap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="230dp"
+            android:text="Napon"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovMjerenja" />
+
+        <TextView
+            android:id="@+id/tvNaslovRGB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/RGB"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvNaslovMjerenja"
+            app:layout_constraintStart_toStartOf="@+id/tvNaslovMjerenja"
+            app:layout_constraintTop_toBottomOf="@+id/outletButton" />
+
+        <TextView
+            android:id="@+id/tvNaslovTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/temp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvNaslovRGB"
+            app:layout_constraintStart_toStartOf="@+id/tvNaslovRGB"
+            app:layout_constraintTop_toBottomOf="@+id/colorPreview" />
+
+        <TextView
+            android:id="@+id/tvNaslovGlas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/voice"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvNaslovRGB"
+            app:layout_constraintStart_toStartOf="@+id/tvNaslovRGB"
+            app:layout_constraintTop_toBottomOf="@+id/temperatureTextView" />
+
+        <TextView
+            android:id="@+id/tvNaslovMjerenja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="230dp"
+            android:text="@string/readings"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+        <TextView
+            android:id="@+id/tvBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="B"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvGreen"
+            app:layout_constraintStart_toStartOf="@+id/tvGreen"
+            app:layout_constraintTop_toBottomOf="@+id/tvGreen" />
+
+        <TextView
+            android:id="@+id/tvGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="G"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvRed"
+            app:layout_constraintStart_toStartOf="@+id/tvRed"
+            app:layout_constraintTop_toBottomOf="@+id/tvRed" />
+
+        <TextView
+            android:id="@+id/tvRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="R"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/redSeekBar"
+            app:layout_constraintStart_toStartOf="@+id/tvNaslovRGB"
+            app:layout_constraintTop_toBottomOf="@+id/tvNaslovRGB" />
+
+        <TextView
+            android:id="@+id/tvNaslovBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/buttons"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvNaslovMjerenja"
+            app:layout_constraintStart_toStartOf="@+id/tvNaslovMjerenja"
+            app:layout_constraintTop_toBottomOf="@+id/tvNap" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

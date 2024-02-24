@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SHome</string>
+    <string name="living_room">Living room</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="outlet">Outlet</string>
+    <string name="hood">Hood</string>
+    <string name="door">Door</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="readings">Readings</string>
+    <string name="buttons">Buttons</string>
+    <string name="RGB">RGB selection</string>
+    <string name="temp">Cooling fan</string>
+    <string name="voice">Voice commands</string>
+    <string name="eng">English</string>
+    <string name="hr">Croatian</string>
+</resources>

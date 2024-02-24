@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SHome</string>
+    <string name="living_room">Dnevni</string>
+    <string name="bedroom">Soba</string>
+    <string name="kitchen">Kuhinja</string>
+    <string name="outlet">Utičnica</string>
+    <string name="hood">Napa</string>
+    <string name="door">Vrata</string>
+    <string name="start">Započni</string>
+    <string name="stop">Zaustavi</string>
+    <string name="readings">Mjerenja</string>
+    <string name="buttons">Tipke</string>
+    <string name="RGB">RGB Selekcija</string>
+    <string name="temp">Ventilator</string>
+    <string name="voice">Glasovne naredbe</string>
+    <string name="eng">Engleski</string>
+    <string name="hr">Hrvatski</string>
+</resources>
